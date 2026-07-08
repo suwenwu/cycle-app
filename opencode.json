@@ -1,0 +1,51 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "skill": "allow",
+    "edit": "allow",
+    "bash": "ask",
+    "webfetch": "allow",
+    "task": "allow",
+    "question": "allow",
+    "todowrite": "allow"
+  },
+  "agent": {
+    "flash": {
+      "description": "Flash worker for simple tasks: config files, type definitions, UI components, styles. No complex logic.",
+      "model": "opencode-go/deepseek-v4-flash",
+      "mode": "subagent",
+      "permission": {
+        "read": "allow",
+        "edit": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "bash": "ask",
+        "skill": "allow",
+        "webfetch": "allow",
+        "task": "deny",
+        "question": "deny",
+        "todowrite": "deny"
+      }
+    },
+    "pro": {
+      "description": "Pro worker for complex tasks: API clients, IPC, streaming, core logic. Handles difficult problems.",
+      "model": "opencode-go/deepseek-v4-flash",
+      "mode": "subagent",
+      "permission": {
+        "read": "allow",
+        "edit": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "bash": "ask",
+        "skill": "allow",
+        "webfetch": "allow",
+        "task": "deny",
+        "question": "deny",
+        "todowrite": "deny"
+      }
+    }
+  }
+}
